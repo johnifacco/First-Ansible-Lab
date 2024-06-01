@@ -1,0 +1,14 @@
+---
+- name: Play #1 - execute show version across platforms
+  hosts: routers
+
+  tasks:
+    - name: “IOS - Execute show version"
+      nxos_command:
+        commands: "show version"
+      register: output
+
+    - name: Version output
+      debug:
+        var: output.stdout_lines[0]
+...

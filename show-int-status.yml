@@ -1,0 +1,14 @@
+---
+- name: Play #1 - issue show commands
+  hosts: routers
+
+  tasks:
+    - name: "run show int status on remote devices"
+      cisco.nxos.nxos_command:
+        commands: "show interface status"
+      register: if_data
+
+    - name: Interfaces output
+      debug:
+        var: if_data['stdout_lines'][0]
+...

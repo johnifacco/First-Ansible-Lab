@@ -1,0 +1,20 @@
+---
+- name: Play #1 - configure interfaces
+  hosts: routers
+
+  tasks:
+   - name: Replaces device configuration of listed interfaces with provided configuration
+     cisco.nxos.nxos_interfaces:
+       config:
+       - name: Ethernet1/2
+         description: Configured by Ansible
+         enabled: true
+         mode: layer2
+         mtu: 9216
+       - name: Ethernet1/3
+         description: Configured by Ansible Network
+         enabled: true
+         mode: layer2
+         mtu: 9216
+       state: replaced
+...
