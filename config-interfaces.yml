@@ -6,12 +6,12 @@
    - name: Replaces device configuration of listed interfaces with provided configuration
      cisco.nxos.nxos_interfaces:
        config:
-       - name: Ethernet1/2
+       - name: Ethernet1/5
          description: Configured by Ansible
          enabled: true
          mode: layer2
          mtu: 9216
-       - name: Ethernet1/3
+       - name: Ethernet1/6
          description: Configured by Ansible Network
          enabled: true
          mode: layer2
